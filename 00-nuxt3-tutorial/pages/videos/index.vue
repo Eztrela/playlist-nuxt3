@@ -3,6 +3,7 @@
         Vídeos
     </div>
     <NuxtLink to="/videos/favoritos">Favoritos</NuxtLink>
+    <h1>{{ $t('titulo') }}</h1>
     <div class="videos">
         <div v-for="video in videos" :key="video.id">
             <h2>{{ video.descricao }}</h2>
@@ -24,7 +25,11 @@
 <script setup lang="ts">
 import type { Video } from '~/interfaces/video';
 
+const {$toast} = useNuxtApp()
 
+onMounted(()=>{
+    $toast.success('Toast adicionado com sucesso!')
+})
 // const favoritos = useFavoritos()
 
 const {adicionarFavorito} = useVideoStore();

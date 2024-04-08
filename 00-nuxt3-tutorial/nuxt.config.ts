@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   },
   components: [{path: "~/shared/icons", prefix: "Icon"},'~/components'],
   css: ["@/assets/css/main.css"],
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt',"@pinia-plugin-persistedstate/nuxt", ['@nuxtjs/i18n',{vueI18n:'./i18n'}],
+],
   pinia: {
     storesDirs: ['./stores/**']
   }
